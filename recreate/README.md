@@ -1,15 +1,6 @@
 Recreate deployment
 ===================
 
-> Version A is terminated then version B is rolled out.
-
-![kubernetes recreate deployment](grafana-recreate.png)
-
-The recreate strategy is a dummy deployment which consists of shutting down
-version A then deploying version B after version A is turned off. This technique
-implies downtime of the service that depends on both shutdown and boot duration
-of the application.
-
 ## Steps to follow
 
 1. version 1 is service traffic
