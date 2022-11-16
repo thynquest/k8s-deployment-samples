@@ -1,13 +1,16 @@
 #!/bin/bash
 
-status_code=200
-while [ $status_code -eq 200 ]
+http_code=200
+URL="http://localhost:8080"
+while [ $http_code -eq 200 ]
 do
     sleep 1.5
-    status_code=$(curl --write-out %{http_code} --silent --output /dev/null http://localhost:8080)
-    if [[ "$status_code" -ne 200 ]] ; then
-        echo "Site status changed to $status_code"
+    response=$(curl -s -w "%{http_code}" $URL)
+    http_code=$(tail -n1 <<< "$response")
+    if [[ "$http_code" -ne 200 ]] ; then
+        echo "Site is not up status is $http_code"
     else
-        echo "Site ok"
+        content=$(sed '$ d' <<< "$response")
+        echo $content
     fi
 done
