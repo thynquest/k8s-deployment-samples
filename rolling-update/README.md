@@ -31,7 +31,6 @@ following parameters to increase the deployment time:
 
 ```bash
 # Deploy the first application
-# Deploy the first application
 $ kubectl apply -f app-v1.yaml
 
 # Test if the deployment was successful
