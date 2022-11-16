@@ -24,15 +24,14 @@ $ ./check.sh
 $ kubectl apply -f app-v2.yaml
 
 # In case you discover some issue with the new version, you can undo the
-# rollout
-$ kubectl rollout undo deploy reply-server
+# rollout ==> HOW ??
+
 
 # If you can also pause the rollout if you want to run the application for a
-# subset of users
-$ kubectl rollout pause deploy reply-server
+# subset of users ==> HOW ??
 
-# Then if you are satisfied with the result, resume rollout
-$ kubectl rollout resume deploy reply-server
+
+# Then if you are satisfied with the result, resume rollout ==> HOW ??
 ```
 
 ### Cleanup
